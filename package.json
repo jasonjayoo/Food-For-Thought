@@ -1,0 +1,3 @@
+{
+    "build:css": "tailwind build src/style.css -o style.css"
+}

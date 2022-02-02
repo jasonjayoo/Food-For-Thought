@@ -1,19 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
+
+<!-- Some codes may need to be rewritten to implement block/box and Bulma layout-->
+<!-- Also, implement Bulma in sizing headings, fonts, and images -->
 <body>
-    
+  <!-- Heading -->
+  <div class="box">
+    <header class="is-full" id="mainHeader">
+      <div class="has-text-centered">
+        <h1 class="title is-1">What's In Your Fridge?</h1>
+        <h2 class="subtitle">Tell us your ingredient and we'll show you how to cook it.</h2>
+      </div>
+    </header>
+
+    <!-- Nav Bar <-- we need to edit this because Bulma doesn't make use of JS elements, e.g., navbar-burger-->
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" id="home-nav">Home</a>
+        <a class="navbar-item" id="recipe-nav">Recipes</a>
+        <a class="navbar-item" id="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <!-- navbar items, navbar burger... -->
+    </div>
+    <div class="navbar-menu">
+      <!-- navbar start, navbar end -->
+    </div>
+  </nav>
+  </div>
+
+  <!-- Search bar -->
+  <div class="block">
+    <h4 class="title is-4">What are you looking for?</h4>
+    <div class="topnav"><input type="text" name="search" placeholder="Type your ingredient here..." id="search-bar">
+      <button class="button is white is-primary is-medium" type="search" id="search-button">Search</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+
+  <div class="block">
+    <div class="main-container" id="main-container">
+      <div class="main-recipe" id="main-recipe"></div>
+      <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" id="main-img">
+      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="main-video">Watch a YouTube Video</a>
+    </div>
+
+    <div class="recipe-box" id="recipe-box">
+      <div class="main-ingredients" id="main-ingre">Ingredients</div>
+      <br>
+      <div class="main-instructions" id="main-instr">Instructions</div>
+    </div>
+  </div>
+
+  <!-- Make second row with 4 equal card columns -->
+  <div class="block">
+    <div class="columns is multiline is-mobile">
+      <div class="column is-one-quarter">
+        <div class="second-recipe" id="second-recipe"></div>
+        <img src="https://www.themealdb.com/images/media/meals/1529444113.jpg" id="second-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="second-video">Watch a YouTube Video</a>
+        <div class="" id="second-ingre">Ingredients</div>
+        <div class="" id="second-instr">Instructions</div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="third-recipe" id="third-recipe"></div>
+        <img src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg" id="third-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="third-video">Watch A YouTube Video</a>
+        <div class="" id="third-ingre">Ingredients</div>
+        <div class="" id="third-instr">Instructions</div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="fourth-recipe" id="fourth-recipe"></div>
+        <img src="https://www.themealdb.com/images/media/meals/md8w601593348504.jpg" id="fourth-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fourth-video">Watch a YouTube Video</a>
+        <div class="" id="fourth-ingre">Ingredients</div>
+        <div class="" id="fourth-instr">Instructions</div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="" id="fifth-recipe"></div>
+        <img src="https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg" id="fifth-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fifth-video">Watch YouTube Video</a>
+        <div class="" id="fifth-ingre">Ingredients</div>
+        <div class="" id="fifth-instr">Instructions</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- Side Menu <-- this needs to be in the same level as the main container -->
+  <div class="block2">
+    <aside class="menu">
+      <p class="menu-label">
+        Search History
+      </p>
+
+      <!-- Can the search history be made to look like a word cloud? the bigger the words are = more searches for the said ingredients -->
+      <div class="search history" id="search-history">
+      </div>
+      <br>
+      <button class="button is-medium is-primary is-rounded">Find a pairing</button>
+  </div>
+  </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="script.js"></script>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="script.js"></script>
+
 </html>

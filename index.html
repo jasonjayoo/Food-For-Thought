@@ -1,19 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Food for Thought</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>Food for thought </h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="#services" data-after="Service">search</a></li>
+            <li><a href="#about" data-after="About">About</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>What, <span></span></h1>
+        <h1>are you <span></span></h1>
+        <h1>hungry for? <span></span></h1>
+        <a href="#services" type="button" class="cta">Search Now.</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">Search here</h1>
+        <p>with just a search of a button, you can find out an amazing recipe with just a single keyword.</p>
+      </div>
+        </div>
+        <div class="topnav">
+          <input type="text" name="search" placeholder="Search.." id="search-bar">
+          <button for="search" id="search-button">Search</button> 
+        </div> 
+        <div class="" id="main-container">
+          <div class="" id="main-recipe"></div>
+              <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" id="main-img">
+              <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="main-video">YouTube Video</a>
+              <div class="" id="main-instr">instructions</div>
+              <div class="" id="main-ingre">ingredients</div>
+              <!-- Make second row with 4 equal card columns -->
+          <div class="" id="second-recipe"></div>
+          <img src="https://www.themealdb.com/images/media/meals/1529444113.jpg" id="second-img">
+          <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="second-video">YouTube Video</a>
+          <div class="" id="second-instr">instructions</div>
+          <div class="" id="second-ingre">ingredients</div>
+  
+          <div class="" id="third-recipe"></div>
+          <img src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg" id="third-img">
+          <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="third-video">YouTube Video</a>
+          <div class="" id="third-instr">instructions</div>
+          <div class="" id="third-ingre">ingredients</div>
+  
+          <div class="" id="fourth-recipe"></div>
+          <img src="https://www.themealdb.com/images/media/meals/md8w601593348504.jpg" id="fourth-img">
+          <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fourth-video">YouTube Video</a>
+          <div class="" id="fourth-instr">instructions</div>
+          <div class="" id="fourth-ingre">ingredients</div>
+          
+          <div class="" id="fifth-recipe"></div>
+          <img src="https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg" id="fifth-img">
+          <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fifth-video">YouTube Video</a>
+          <div class="" id="fifth-instr">instructions</div>
+          <div class="" id="fifth-ingre">ingredients</div>
+          
+      </div>
+    </div>
+  
+      <div class="" id="search-history">
+      </div>
+   
+
+        <!-- The form -->
+        <form class="example" action=">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+  </section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+ 
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About the<span> team</span></h1>
+        <h2>Front End Developer</h2>
+        <p>Kyle,jason,jully,andrew, jane</p>
+        <a href="#" class="cta">Download Resume</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+1 234 123 1234</h2>
+            <h2>+1 234 123 1234</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>info@gmail.com</h2>
+            <h2>abcd@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Irvine California on Zoom</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+      
+      </div>
+  
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./script.js"></script>
+</body>
+
 </html>

@@ -113,13 +113,11 @@ function getIngredientInfo() {
                 mainRecipe.innerHTML = data.meals[0].strMeal;
                 secondRecipe.innerHTML = data.meals[1].strMeal;
                 thirdRecipe.innerHTML = data.meals[2].strMeal;
-                fourthRecipe.innerHTML = data.meals[3].strMeal;
-                fifthRecipe.innerHTML = data.meals[4].strMeal;
+
                 mainImg.src = data.meals[0].strMealThumb;
                 secondImg.src = data.meals[1].strMealThumb;
                 thirdImg.src = data.meals[2].strMealThumb;
-                fourthImg.src = data.meals[3].strMealThumb;
-                fifthImg.src = data.meals[4].strMealThumb;
+
                 console.log(data.meals[3])
                 if(data.meals[3] === undefined){
                     fourthRecipe.innerHTML = "";
@@ -139,8 +137,21 @@ function getIngredientInfo() {
                     fifthVid.innerHTML.innerHTML = '';
                     fifthInstructions.innerHTML = '';
                     fifthIngredients.innerHTML = ''; 
+
                 } 
-                
+
+                if (data.meals[3]){
+                    fourthRecipe.innerHTML = data.meals[3].strMeal;
+                    fourthImg.src = data.meals[3].strMealThumb;
+                    fourthVid.innerHTML = 'Watch Youtube Video';
+                    fifthVid.innerHTML = 'Watch Youtube Video';
+                }
+
+                if (data.meals[4]){
+                    fifthRecipe.innerHTML = data.meals[4].strMeal;
+                    fifthImg.src = data.meals[4].strMealThumb;
+                    fifthVid.innerHTML = 'Watch Youtube Video';
+                }
 
             } else {
                 mainRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";

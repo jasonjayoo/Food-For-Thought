@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Food for Thought</title>
@@ -28,7 +27,8 @@
           <ul>
             <li><a href="#hero" data-after="Home">Home</a></li>
             <li><a href="#services" data-after="Service">Search</a></li>
-            <li><a href="recipes" data-after="Recipes">Recipes</a></li>
+            <li><a href="#recipes" data-after="Recipes">Recipes</a></li>
+            <li><a href="#more-recipes" data-after=>More+</a></li>
             <li><a href="#about" data-after="About">About</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
           </ul>
@@ -40,16 +40,25 @@
 
 
   <!-- Hero Section  -->
+
   <section id="hero">
     <div class="hero container">
-      <div>
-        <h1>What <span></span></h1>
-        <h1>are you <span></span></h1>
-        <h1>hungry for? <span></span></h1>
-        <a href="#services" type="button" class="cta">Search Now.</a>
+      
+            <h1>What <span></span></h1>
+            <h1>are you <span></span></h1>
+            <h1>hungry for? <span></span></h1>
+            <a href="#services" type="button" class="cta">Search Now.</a>
+          </div>
+        </div>
+        </nav>
+      </div>
+    </section>
+  </div>
+
       </div>
     </div>
   </section>
+  
   <!-- End Hero Section  -->
 
   <!-- Service Section -->
@@ -68,78 +77,70 @@
   </div>
 
   <!-- Main container -->
-  
-  <div class="block2">
+
+  <section id="recipes">
     <h1 class="section-title">Recipes</h1>
-    <div class="main-container" id="main-container">
-      <div class="main-recipe" id="main-recipe"></div>
-      <
-      <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" id="main-img">
-      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="main-video">Watch a YouTube Video</a>
+      <div class="recipe container">
+        <div class="block2">
+          <div class="main-container" id="main-container">
+            <div class="main-recipe" id="main-recipe"></div>
+              <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" id="main-img"></div>
+              <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="main-video">Watch a YouTube Video</a></div>
+              
+              <div class="recipe-box" id="recipe-box">
+              <div class="main-ingredients" id="main-ingre">Ingredients</div>
+              <br>
+              <div class="main-instructions" id="main-instr">Instructions</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="recipe-box" id="recipe-box">
-      <div class="main-ingredients" id="main-ingre">Ingredients</div>
-      <br>
-      <div class="main-instructions" id="main-instr">Instructions</div>
-    </div>
-  </div>
+  <!-- Make second row with 4 equal card columns -->
+  <section id="more-recipes">
+    <h1 class="section-title">More Recipes</h1>
 
-<!-- Make second row with 4 equal card columns -->
-<div class="block">
-  <div class="columns is multiline is-mobile">
-    <div class="column is-one-quarter">
-      <div class="second-recipe" id="second-recipe"></div>
-      <img src="https://www.themealdb.com/images/media/meals/1529444113.jpg" id="second-img">
-      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="second-video">Watch a YouTube Video</a>
-      <div class="" id="second-ingre">Ingredients</div>
-      <div class="" id="second-instr">Instructions</div>
-    </div>
+  <div class="block3">
+    <div class="columns is multiline is-mobile">
+      <div class="column is-one-quarter">
+        <div class="second-recipe" id="second-recipe"></div>
+          <img src="https://www.themealdb.com/images/media/meals/1529444113.jpg" id="second-img">
+          <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="second-video">Watch a YouTube Video</a>
+            <div class="" id="second-ingre">Ingredients</div>
+            <div class="" id="second-instr">Instructions</div>
+      </div>
 
     <div class="column is-one-quarter">
       <div class="third-recipe" id="third-recipe"></div>
-      <img src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg" id="third-img">
-      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="third-video">Watch A YouTube Video</a>
-      <div class="" id="third-ingre">Ingredients</div>
-      <div class="" id="third-instr">Instructions</div>
+        <img src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg" id="third-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="third-video">Watch A YouTube Video</a>
+          <div class="" id="third-ingre">Ingredients</div>
+          <div class="" id="third-instr">Instructions</div>
     </div>
 
     <div class="column is-one-quarter">
       <div class="fourth-recipe" id="fourth-recipe"></div>
-      <img src="https://www.themealdb.com/images/media/meals/md8w601593348504.jpg" id="fourth-img">
-      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fourth-video">Watch a YouTube Video</a>
-      <div class="" id="fourth-ingre">Ingredients</div>
-      <div class="" id="fourth-instr">Instructions</div>
+        <img src="https://www.themealdb.com/images/media/meals/md8w601593348504.jpg" id="fourth-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fourth-video">Watch a YouTube Video</a>
+          <div class="" id="fourth-ingre">Ingredients</div>
+          <div class="" id="fourth-instr">Instructions</div>
     </div>
 
     <div class="column is-one-quarter">
       <div class="" id="fifth-recipe"></div>
-      <img src="https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg" id="fifth-img">
-      <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fifth-video">Watch YouTube Video</a>
-      <div class="" id="fifth-ingre">Ingredients</div>
-      <div class="" id="fifth-instr">Instructions</div>
+        <img src="https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg" id="fifth-img">
+        <a href="https://www.youtube.com/embed/1IszT_guI08" target="_blank" id="fifth-video">Watch YouTube Video</a>
+          <div class="" id="fifth-ingre">Ingredients</div>
+          <div class="" id="fifth-instr">Instructions</div>
     </div>
+
   </div>
-</div>
-</div>
-</div>
-
-
   </div>
   </div>
 
 
-  <div class="recipe-container">
-    <div class="level">
-
-
-    </div>
-  </div>
-  </div>
   
-
-
-  </div>
-  </div>
+  <h2 class="subtitle is-2">Previous Searches</h2>
 
   <div class="" id="search-history">
   </div>

@@ -1,3 +1,5 @@
+localStorage.removeItem("searchHistory");
+
 var searchBar = document.querySelector('#search-bar');
 var searchBtn = document.querySelector('#search-button');
 
@@ -37,11 +39,9 @@ var fifthIngredients = document.querySelector('#fifth-ingre');
 var fourthContainer = document.querySelector('#fourth-container');
 var fifthContainer = document.querySelector('#fifth-container');
 
+var IngreInstrContainer = document.querySelector('#recipe-box')
 
 var recipeList = document.querySelector("#search-history")
-
-// var videoOne = document.querySelector("#videoOne")
-
 
 var recipeSearched = "";
 var mealId = "";
@@ -67,6 +67,8 @@ searchBtn.addEventListener('click', function(event){
  
     getIngredientInfo();
     createSearchHistory();
+
+    location.href = "#recipes";
     
 });
 
@@ -91,7 +93,7 @@ function createSearchHistory() {
 
             if(recipeList.children.item(i) != null) {
                 recipeList.children.item(i).addEventListener("click", function () {
-                    console.log(recipeList.children.item(i));
+
                     recipeSearched = recipeList.children.item(i).textContent
                     getIngredientInfo();
                 });
@@ -104,14 +106,14 @@ function getIngredientInfo() {
 
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${recipeSearched}`)
         .then(function (response){
-            console.log(response)
             return response.json();
             
         })
         .then(function (data){
-            console.log(data)
+            searchBar.value = "";
 
-            if(data.meals !== null) {        
+            if(data.meals !== null) {  
+                    
                 mainRecipe.innerHTML = data.meals[0].strMeal;
                 secondRecipe.innerHTML = data.meals[1].strMeal;
                 thirdRecipe.innerHTML = data.meals[2].strMeal;
@@ -119,19 +121,18 @@ function getIngredientInfo() {
                 mainImg.src = data.meals[0].strMealThumb;
                 secondImg.src = data.meals[1].strMealThumb;
                 thirdImg.src = data.meals[2].strMealThumb;
-
-                console.log(data.meals[3])
+                IngreInstrContainer.removeAttribute("class", "hidden");  
 
                 if (data.meals[3]){
                     fourthRecipe.innerHTML = data.meals[3].strMeal;
                     fourthImg.src = data.meals[3].strMealThumb;
-                    fourthVid.innerHTML = 'Watch Youtube Video';    
+                    fourthVid.innerHTML = 'YouTube Video';    
                 }
 
                 if (data.meals[4]){
                     fifthRecipe.innerHTML = data.meals[4].strMeal;
                     fifthImg.src = data.meals[4].strMealThumb;
-                    fifthVid.innerHTML = 'Watch Youtube Video';
+                    fifthVid.innerHTML = 'YouTube Video';
                 }
 
                 if(data.meals[3] === undefined){
@@ -152,10 +153,7 @@ function getIngredientInfo() {
                     fifthVid.innerHTML = '';
                     fifthInstructions.innerHTML = '';
                     fifthIngredients.innerHTML = ''; 
-
                 } 
-
-
 
             } else {
                 mainRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
@@ -173,8 +171,9 @@ function getIngredientInfo() {
                 thirdVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4'; 
                 fourthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
                 fifthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                fourthVid.innerHTML = "Watch Youtube Video";
-                fifthVid.innerHTML = "Watch Youtube Video";
+                fourthVid.innerHTML = "Watch A YouTube Video";
+                fifthVid.innerHTML = "Watch A YouTube Video";
+                IngreInstrContainer.setAttribute("class", "hidden");
                 mainIngredients.innerHTML = "";
                 secondIngredients.innerHTML = "";
                 thirdIngredients.innerHTML = "";
@@ -186,7 +185,6 @@ function getIngredientInfo() {
                 fourthInstructions.innerHTML = "";
                 fifthInstructions.innerHTML =  "";
             }
-            
 
             if(data.meals !== null){
                 mealName = data.meals[0].strMeal
@@ -203,9 +201,11 @@ function getIngredientInfo() {
               else {
                 mealName3 = "No Recipes Found Please Try A Different Ingredient"
               }
+
             if(data.meals[4] !== undefined) {
                 mealName4 = data.meals[4].strMeal
-                getMealInfo4(mealName4)                
+                getMealInfo4(mealName4)
+
             } else { 
                 mealName4 = "No Recipes Found Please Try A Different Ingredient"
             }
@@ -214,18 +214,8 @@ function getIngredientInfo() {
             mealName1 = "No Recipes Found Please Try A Different Ingredient"
             mealName2 = "No Recipes Found Please Try A Different Ingredient"
             }
-
-            console.log(mealName1)
-            
-            // console.log(data.meals[0].strMeal)
-            
-
-
-
-
-        
+  
         });
-
 }
 
 function getMealInfo (mealName) {
@@ -233,53 +223,30 @@ function getMealInfo (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
     .then(function(data){
-        console.log(data)
         if (data.meals !== null){
             mainIngredients.innerHTML = "Ingredients: "
             mainInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
-
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else{
-                    console.log(each)
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     mainIngredients.append(newIngredient)
-
                     } 
                }
-
                mainVid.href = data.meals[0].strYoutube;
-               console.log(secondVid.href)
-            //    if(data.meals[0].strYoutube === "") {
-            //        videoOne.innerHTML = "No YouTube Video Available";
-            //        mainVid.href = '';
-            //        mainVid.innerHTML = "";
-            //    } else {
-            //        mainVid.href = data.meals[0].strYoutube;
-            //        videoOne.textContent = "";
-            //        mainVid.innerHTML = "Watch YouTube Video"
-            //     }
-               
-               console.log(mainVid.href)
     } else {
         mainInstructions.innerHTML = "Please Try A Different Ingredient"
         mainIngredients.innerHTML = "";   
@@ -293,59 +260,31 @@ function getMealInfo1 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
     .then(function(data){
-        console.log(data)
         if (data.meals !== null){
             secondIngredients.innerHTML = "Ingredients: "
             secondInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else{
-                    console.log(each)
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     secondIngredients.append(newIngredient)
-
                     } 
                }
-
-//             for (each of dataArray.slice(9,29)) {
-//                 if(each[1] != "") {
-//                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
-//                   } 
-//             }
-// // still working on the ingredients if no info returns
-
-//             for (each of dataArray.slice(9,29)) {
-//                 if(each[1] != "") {
-//                     console.log(each)
-//                     const newIngredient = document.createElement('div')
-//                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
-//                     secondIngredients.append(newIngredient)
-
-//                     } 
-//                }
-
                secondVid.href = data.meals[0].strYoutube;
-               console.log(secondVid.href)
     } else {
         secondInstructions.innerHTML = "Please Try A Different Ingredient"
         secondIngredients.innerHTML = "";   
@@ -357,8 +296,6 @@ function getMealInfo2 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -367,33 +304,23 @@ function getMealInfo2 (mealName) {
         if (data.meals !== null){
             thirdIngredients.innerHTML = "Ingredients: "
             thirdInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+            
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
-
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else{
-                    console.log(each)
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     thirdIngredients.append(newIngredient)
-
                     } 
                }
-
-
                thirdVid.href = data.meals[0].strYoutube;
-               console.log(thirdVid.href)
     } else {
         thirdInstructions.innerHTML = "Please Try A Different Ingredient"
         thirdIngredients.innerHTML = "";   
@@ -405,8 +332,6 @@ function getMealInfo3 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -415,33 +340,25 @@ function getMealInfo3 (mealName) {
         if (data.meals !== null){
             fourthIngredients.innerHTML = "Ingredients: "
             fourthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+ 
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else{
-                    console.log(each)
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     fourthIngredients.append(newIngredient)
-
                     } 
                }
 
-
                fourthVid.href = data.meals[0].strYoutube;
-               console.log(fourthVid.href)
     } else {
         fourthInstructions.innerHTML = "Please Try A Different Ingredient"
         fourthIngredients.innerHTML = "";   
@@ -453,8 +370,6 @@ function getMealInfo4 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -463,18 +378,15 @@ function getMealInfo4 (mealName) {
         if (data.meals !== null){
             fifthIngredients.innerHTML = "Ingredients: "
             fifthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
+
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
                 } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
                 if(each[1] === "" || each[1] === null) {
@@ -483,20 +395,12 @@ function getMealInfo4 (mealName) {
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     fifthIngredients.append(newIngredient)
-
                     } 
                }
-
                fifthVid.href = data.meals[0].strYoutube;
-               console.log(fifthVid.href)
     } else {
         fifthInstructions.innerHTML = "Please Try A Different Ingredient"
         fifthIngredients.innerHTML = "";   
     }
   })   
 }
-
-
-
-createSearchHistory();
-getIngredientInfo()

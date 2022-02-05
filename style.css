@@ -399,7 +399,7 @@ p {
     padding-top: 5.5px;
     text-align: center;
     border-radius: 25px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 2px 2px 8px black;
 }
 
 .button {
@@ -409,7 +409,7 @@ p {
     padding-right: 2em;
     margin-top: 0.75px;
     border-radius: 25px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 2px 2px 8px black;
 }
 
 #search-list {
@@ -443,6 +443,10 @@ p {
     box-shadow: 2px 2px 6px black;
     font-size: 16px;
 
+}
+
+#main-instr {
+    /* padding: 20px */
 }
 
 /* Services Section */
@@ -608,8 +612,8 @@ p {
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	margin-bottom: 10px;
-    margin-left: -420px;
     padding-bottom: 20px;
+    text-align: start;
 }
 
 #about .col-right p {

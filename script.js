@@ -228,8 +228,8 @@ function getMealInfo (mealName) {
     })
     .then(function(data){
         if (data.meals !== null){
-            mainIngredients.innerHTML = "Ingredients: "
-            mainInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
+            mainIngredients.innerHTML = "Ingredients: <br><br>"
+            mainInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
             dataArray = Object.entries(data.meals[0])
 
             for (each of dataArray.slice(9,29)) {
@@ -265,8 +265,8 @@ function getMealInfo1 (mealName) {
     })
     .then(function(data){
         if (data.meals !== null){
-            secondIngredients.innerHTML = "Ingredients: "
-            secondInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
+            secondIngredients.innerHTML = "Ingredients: <br><br>"
+            secondInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
             dataArray = Object.entries(data.meals[0])
 
             for (each of dataArray.slice(9,29)) {
@@ -302,8 +302,8 @@ function getMealInfo2 (mealName) {
     .then(function(data){
         console.log(data)
         if (data.meals !== null){
-            thirdIngredients.innerHTML = "Ingredients: "
-            thirdInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
+            thirdIngredients.innerHTML = "Ingredients: <br><br>"
+            thirdInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
             dataArray = Object.entries(data.meals[0])
             
             for (each of dataArray.slice(9,29)) {
@@ -338,8 +338,8 @@ function getMealInfo3 (mealName) {
     .then(function(data){
         console.log(data)
         if (data.meals !== null){
-            fourthIngredients.innerHTML = "Ingredients: "
-            fourthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
+            fourthIngredients.innerHTML = "Ingredients: <br><br>"
+            fourthInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
             dataArray = Object.entries(data.meals[0])
  
             for (each of dataArray.slice(9,29)) {
@@ -376,8 +376,8 @@ function getMealInfo4 (mealName) {
     .then(function(data){
         console.log(data)
         if (data.meals !== null){
-            fifthIngredients.innerHTML = "Ingredients: "
-            fifthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
+            fifthIngredients.innerHTML = "Ingredients: <br><br>"
+            fifthInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
 
             dataArray = Object.entries(data.meals[0])
 

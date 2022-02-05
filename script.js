@@ -93,7 +93,7 @@ function createSearchHistory() {
 
             if(recipeList.children.item(i) != null) {
                 recipeList.children.item(i).addEventListener("click", function () {
-
+console.log("clicked")
                     recipeSearched = recipeList.children.item(i).textContent
                     getIngredientInfo();
                 });
@@ -171,8 +171,8 @@ function getIngredientInfo() {
                 thirdVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4'; 
                 fourthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
                 fifthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                fourthVid.innerHTML = "Watch A YouTube Video";
-                fifthVid.innerHTML = "Watch A YouTube Video";
+                fourthVid.innerHTML = "YouTube Video";
+                fifthVid.innerHTML = "YouTube Video";
                 IngreInstrContainer.setAttribute("class", "hidden");
                 mainIngredients.innerHTML = "";
                 secondIngredients.innerHTML = "";

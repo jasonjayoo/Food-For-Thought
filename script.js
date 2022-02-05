@@ -1,3 +1,5 @@
+localStorage.removeItem("searchHistory");
+
 var searchBar = document.querySelector('#search-bar');
 var searchBtn = document.querySelector('#search-button');
 
@@ -37,9 +39,9 @@ var fifthIngredients = document.querySelector('#fifth-ingre');
 var fourthContainer = document.querySelector('#fourth-container');
 var fifthContainer = document.querySelector('#fifth-container');
 
+var IngreInstrContainer = document.querySelector('#recipe-box')
 
 var recipeList = document.querySelector("#search-history")
-
 
 var recipeSearched = "";
 var mealId = "";
@@ -65,6 +67,8 @@ searchBtn.addEventListener('click', function(event){
  
     getIngredientInfo();
     createSearchHistory();
+
+    location.href = "#recipes";
     
 });
 
@@ -89,7 +93,7 @@ function createSearchHistory() {
 
             if(recipeList.children.item(i) != null) {
                 recipeList.children.item(i).addEventListener("click", function () {
-                    console.log(recipeList.children.item(i));
+
                     recipeSearched = recipeList.children.item(i).textContent
                     getIngredientInfo();
                 });
@@ -102,25 +106,35 @@ function getIngredientInfo() {
 
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${recipeSearched}`)
         .then(function (response){
-            console.log(response)
             return response.json();
             
         })
         .then(function (data){
-            console.log(data)
+            searchBar.value = "";
 
-            if(data.meals !== null) {        
+            if(data.meals !== null) {  
+                    
                 mainRecipe.innerHTML = data.meals[0].strMeal;
                 secondRecipe.innerHTML = data.meals[1].strMeal;
                 thirdRecipe.innerHTML = data.meals[2].strMeal;
-                fourthRecipe.innerHTML = data.meals[3].strMeal;
-                fifthRecipe.innerHTML = data.meals[4].strMeal;
+
                 mainImg.src = data.meals[0].strMealThumb;
                 secondImg.src = data.meals[1].strMealThumb;
                 thirdImg.src = data.meals[2].strMealThumb;
-                fourthImg.src = data.meals[3].strMealThumb;
-                fifthImg.src = data.meals[4].strMealThumb;
-                console.log(data.meals[3])
+                IngreInstrContainer.removeAttribute("class", "hidden");  
+
+                if (data.meals[3]){
+                    fourthRecipe.innerHTML = data.meals[3].strMeal;
+                    fourthImg.src = data.meals[3].strMealThumb;
+                    fourthVid.innerHTML = 'YouTube Video';    
+                }
+
+                if (data.meals[4]){
+                    fifthRecipe.innerHTML = data.meals[4].strMeal;
+                    fifthImg.src = data.meals[4].strMealThumb;
+                    fifthVid.innerHTML = 'YouTube Video';
+                }
+
                 if(data.meals[3] === undefined){
                     fourthRecipe.innerHTML = "";
                     fifthRecipe.innerHTML = "";
@@ -136,11 +150,10 @@ function getIngredientInfo() {
                 } else if (data.meals[4] === undefined) {
                     fifthRecipe.innerHTML = "";
                     fifthImg.setAttribute('src', '');
-                    fifthVid.innerHTML.innerHTML = '';
+                    fifthVid.innerHTML = '';
                     fifthInstructions.innerHTML = '';
                     fifthIngredients.innerHTML = ''; 
                 } 
-                
 
             } else {
                 mainRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
@@ -148,44 +161,61 @@ function getIngredientInfo() {
                 thirdRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
                 fourthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
                 fifthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
-                mainImg.setAttribute('src', "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg");
-                secondImg.setAttribute('src', "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg");
-                thirdImg.setAttribute('src', "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg");
-                fourthImg.setAttribute('src', "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg");
-                fifthImg.setAttribute('src', "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg");
+                mainImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                secondImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                thirdImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                fourthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                fifthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
                 mainVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
                 secondVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
                 thirdVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4'; 
                 fourthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
                 fifthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
+                fourthVid.innerHTML = "Watch A YouTube Video";
+                fifthVid.innerHTML = "Watch A YouTube Video";
+                IngreInstrContainer.setAttribute("class", "hidden");
+                mainIngredients.innerHTML = "";
+                secondIngredients.innerHTML = "";
+                thirdIngredients.innerHTML = "";
+                fourthIngredients.innerHTML = "";
+                fifthIngredients.innerHTML = "";
+                mainInstructions.innerHTML = "";
+                secondInstructions.innerHTML = "";
+                thirdInstructions.innerHTML = "";
+                fourthInstructions.innerHTML = "";
+                fifthInstructions.innerHTML =  "";
             }
-            
+
             if(data.meals !== null){
                 mealName = data.meals[0].strMeal
                 mealName1 = data.meals[1].strMeal
                 mealName2 = data.meals[2].strMeal
+
+                getMealInfo(mealName)
+                getMealInfo1(mealName1)
+                getMealInfo2(mealName2)
+
+            if(data.meals[3] !== undefined) {
                 mealName3 = data.meals[3].strMeal
+              getMealInfo3(mealName3)}
+              else {
+                mealName3 = "No Recipes Found Please Try A Different Ingredient"
+              }
+
+            if(data.meals[4] !== undefined) {
                 mealName4 = data.meals[4].strMeal
+                getMealInfo4(mealName4)
+
+            } else { 
+                mealName4 = "No Recipes Found Please Try A Different Ingredient"
+            }
+                
             } else {mealName = "No Recipes Found Please Try A Different Ingredient"
             mealName1 = "No Recipes Found Please Try A Different Ingredient"
             mealName2 = "No Recipes Found Please Try A Different Ingredient"
-            mealName3 = "No Recipes Found Please Try A Different Ingredient"
-            mealName4 = "No Recipes Found Please Try A Different Ingredient"
             }
-
-            console.log(mealName)
-            
-            // console.log(data.meals[0].strMeal)
-            
-            getMealInfo(mealName)
-            getMealInfo1(mealName1)
-            getMealInfo2(mealName2)
-            getMealInfo3(mealName3)
-            getMealInfo4(mealName4)
-
-        
+  
         });
-
 }
 
 function getMealInfo (mealName) {
@@ -193,44 +223,35 @@ function getMealInfo (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
     .then(function(data){
-        console.log(data)
         if (data.meals !== null){
             mainIngredients.innerHTML = "Ingredients: "
             mainInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
-
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
-                    console.log(each)
+                if(each[1] === "" || each[1] === null) {
+                } else{
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     mainIngredients.append(newIngredient)
-
                     } 
                }
-
                mainVid.href = data.meals[0].strYoutube;
-               console.log(mainVid.href)
     } else {
         mainInstructions.innerHTML = "Please Try A Different Ingredient"
         mainIngredients.innerHTML = "";   
     }
+
   })   
 }
 
@@ -239,40 +260,31 @@ function getMealInfo1 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
     .then(function(data){
-        console.log(data)
         if (data.meals !== null){
             secondIngredients.innerHTML = "Ingredients: "
             secondInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
-                    console.log(each)
+                if(each[1] === "" || each[1] === null) {
+                } else{
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     secondIngredients.append(newIngredient)
-
                     } 
                }
-
                secondVid.href = data.meals[0].strYoutube;
-               console.log(secondVid.href)
     } else {
         secondInstructions.innerHTML = "Please Try A Different Ingredient"
         secondIngredients.innerHTML = "";   
@@ -284,8 +296,6 @@ function getMealInfo2 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -294,30 +304,23 @@ function getMealInfo2 (mealName) {
         if (data.meals !== null){
             thirdIngredients.innerHTML = "Ingredients: "
             thirdInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+            
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
-
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
-                    console.log(each)
+                if(each[1] === "" || each[1] === null) {
+                } else{
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     thirdIngredients.append(newIngredient)
-
                     } 
                }
-
                thirdVid.href = data.meals[0].strYoutube;
-               console.log(thirdVid.href)
     } else {
         thirdInstructions.innerHTML = "Please Try A Different Ingredient"
         thirdIngredients.innerHTML = "";   
@@ -329,8 +332,6 @@ function getMealInfo3 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -339,30 +340,25 @@ function getMealInfo3 (mealName) {
         if (data.meals !== null){
             fourthIngredients.innerHTML = "Ingredients: "
             fourthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+ 
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
-                    console.log(each)
+                if(each[1] === "" || each[1] === null) {
+                } else{
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     fourthIngredients.append(newIngredient)
-
                     } 
                }
 
                fourthVid.href = data.meals[0].strYoutube;
-               console.log(fourthVid.href)
     } else {
         fourthInstructions.innerHTML = "Please Try A Different Ingredient"
         fourthIngredients.innerHTML = "";   
@@ -374,8 +370,6 @@ function getMealInfo4 (mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
          
     .then (function (response){
-        console.log(response)
-
         return response.json()
 
     })
@@ -384,38 +378,29 @@ function getMealInfo4 (mealName) {
         if (data.meals !== null){
             fifthIngredients.innerHTML = "Ingredients: "
             fifthInstructions.innerHTML = "Instructions: " + data.meals[0].strInstructions 
-            // console.log(data.meals[0].strInstructions)
-            // console.log(Object.entries(data.meals[0]))
+
             dataArray = Object.entries(data.meals[0])
-            // console.log(dataArray.slice(9,49))
-            // console.log(dataArray[10][0], dataArray[10][1])
+
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else {
                   console.log(each[1], dataArray[dataArray.indexOf(each)+20][1])
                   } 
             }
-// still working on the ingredients if no info returns
 
             for (each of dataArray.slice(9,29)) {
-                if(each[1] != "") {
+                if(each[1] === "" || each[1] === null) {
+                } else{
                     console.log(each)
                     const newIngredient = document.createElement('div')
                     newIngredient.textContent = each[1] +' :   ' + dataArray[dataArray.indexOf(each)+20][1]
                     fifthIngredients.append(newIngredient)
-
                     } 
                }
-
                fifthVid.href = data.meals[0].strYoutube;
-               console.log(fifthVid.href)
     } else {
         fifthInstructions.innerHTML = "Please Try A Different Ingredient"
         fifthIngredients.innerHTML = "";   
     }
   })   
 }
-
-
-
-createSearchHistory();
-getIngredientInfo()

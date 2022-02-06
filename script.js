@@ -44,6 +44,8 @@ var additionalRecipes = document.querySelector('#more-recipes')
 
 var recipeList = document.querySelector("#search-history")
 
+var resetBtn = document.querySelector("#reset-button")
+
 var recipeSearched = "";
 var mealId = "";
 var mealName = "";
@@ -57,20 +59,24 @@ var savedRecipes = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
 searchBtn.addEventListener('click', function(event){
     event.preventDefault();
-    
+
     var mealSearch = searchBar.value.trim(); 
 
     recipeSearched = mealSearch;
+    if(recipeSearched === ""){
+        getIngredientInfo();
+    } else {
+        savedRecipes.push(mealSearch);
 
-    savedRecipes.push(mealSearch);
-
-    localStorage.setItem("searchHistory", JSON.stringify(savedRecipes));
- 
-    getIngredientInfo();
-    createSearchHistory();
+        localStorage.setItem("searchHistory", JSON.stringify(savedRecipes));
+     
+        getIngredientInfo();
+        createSearchHistory();
+        
+    }
 
     location.href = "#recipes";
-    
+
 });
 
 // need to create buttons for previously searched receipes, local storage made above
@@ -97,14 +103,19 @@ function createSearchHistory() {
 console.log("clicked")
                     recipeSearched = recipeList.children.item(i).textContent
                     getIngredientInfo();
+
+                    location.href = "#recipes";
                 });
             }
         }
     }
+    
 }
 
 function getIngredientInfo() {
-
+if(recipeSearched === "") {
+    recipeSearched = "pasta"
+}
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${recipeSearched}`)
         .then(function (response){
             return response.json();
@@ -484,3 +495,8 @@ function getMealInfo4 (mealName) {
     }
   })   
 }
+
+resetBtn.addEventListener('click', function(){
+    // window.localStorage.clear();
+    window.location.reload();
+})

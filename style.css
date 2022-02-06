@@ -444,10 +444,29 @@ p {
     font-size: 16px;
 
 }
-
-#main-instr {
-    /* padding: 20px */
+#clear-section {
+    display: block;
+    text-align: center;
+    font-size: 20px;
 }
+
+#reset-button {
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 35px;
+    border-radius: 25px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 6px black;
+    font-size: 16px;
+}
+
+/* #main-instr {
+    
+} */
 
 /* Services Section */
 #services .services {

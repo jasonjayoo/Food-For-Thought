@@ -40,6 +40,7 @@ var fourthContainer = document.querySelector('#fourth-container');
 var fifthContainer = document.querySelector('#fifth-container');
 
 var IngreInstrContainer = document.querySelector('#recipe-box')
+var additionalRecipes = document.querySelector('#more-recipes')
 
 var recipeList = document.querySelector("#search-history")
 
@@ -115,13 +116,26 @@ function getIngredientInfo() {
             if(data.meals !== null) {  
                     
                 mainRecipe.innerHTML = data.meals[0].strMeal;
-                secondRecipe.innerHTML = data.meals[1].strMeal;
-                thirdRecipe.innerHTML = data.meals[2].strMeal;
+                // secondRecipe.innerHTML = data.meals[1].strMeal;
+                // thirdRecipe.innerHTML = data.meals[2].strMeal;
 
                 mainImg.src = data.meals[0].strMealThumb;
-                secondImg.src = data.meals[1].strMealThumb;
-                thirdImg.src = data.meals[2].strMealThumb;
-                IngreInstrContainer.removeAttribute("class", "hidden");  
+                // secondImg.src = data.meals[1].strMealThumb;
+                // thirdImg.src = data.meals[2].strMealThumb;
+                IngreInstrContainer.removeAttribute("class", "hidden");
+                additionalRecipes.removeAttribute("class", "hidden")  
+
+                if (data.meals[1]){
+                    secondRecipe.innerHTML = data.meals[1].strMeal;
+                    secondImg.src = data.meals[1].strMealThumb;
+                    secondVid.innerHTML = 'YouTube Video';    
+                }
+
+                if (data.meals[2]){
+                    thirdRecipe.innerHTML = data.meals[2].strMeal;
+                    thirdImg.src = data.meals[2].strMealThumb;
+                    thirdVid.innerHTML = 'YouTube Video';
+                }
 
                 if (data.meals[3]){
                     fourthRecipe.innerHTML = data.meals[3].strMeal;
@@ -134,6 +148,47 @@ function getIngredientInfo() {
                     fifthImg.src = data.meals[4].strMealThumb;
                     fifthVid.innerHTML = 'YouTube Video';
                 }
+
+                if(data.meals[1] === undefined){
+                    secondRecipe.innerHTML = "";
+                    thirdRecipe.innerHTML = "";
+                    secondImg.setAttribute('src', '');
+                    thirdImg.setAttribute('src', '');
+                    secondVid.innerHTML = "";
+                    thirdVid.innerHTML = "";
+                    secondInstructions.innerHTML = "";
+                    thirdInstructions.innerHTML = "";
+                    secondIngredients.innerHTML = "";
+                    thirdIngredients.innerHTML = "";
+                    fourthRecipe.innerHTML = "";
+                    fifthRecipe.innerHTML = "";
+                    fourthImg.setAttribute('src', '');
+                    fifthImg.setAttribute('src', '');
+                    fourthVid.innerHTML = '';
+                    fifthVid.innerHTML = '';
+                    fourthInstructions.innerHTML = '';
+                    fifthInstructions.innerHTML = '';
+                    fourthIngredients.innerHTML = '';
+                    fifthIngredients.innerHTML = ''; 
+                } else 
+
+                if(data.meals[2] === undefined){
+                    thirdRecipe.innerHTML = "";
+                    thirdImg.setAttribute('src', '');
+                    thirdVid.innerHTML = "";
+                    thirdInstructions.innerHTML = "";
+                    thirdIngredients.innerHTML = "";
+                    fourthRecipe.innerHTML = "";
+                    fifthRecipe.innerHTML = "";
+                    fourthImg.setAttribute('src', '');
+                    fifthImg.setAttribute('src', '');
+                    fourthVid.innerHTML = '';
+                    fifthVid.innerHTML = '';
+                    fourthInstructions.innerHTML = '';
+                    fifthInstructions.innerHTML = '';
+                    fourthIngredients.innerHTML = '';
+                    fifthIngredients.innerHTML = ''; 
+                } else 
 
                 if(data.meals[3] === undefined){
                     fourthRecipe.innerHTML = "";
@@ -157,43 +212,60 @@ function getIngredientInfo() {
 
             } else {
                 mainRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
-                secondRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
-                thirdRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
-                fourthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
-                fifthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
+                // secondRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
+                // thirdRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
+                // fourthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
+                // fifthRecipe.innerHTML = "No Recipes Found Please Try A Different Ingredient";
                 mainImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
-                secondImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
-                thirdImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
-                fourthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
-                fifthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                // secondImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                // thirdImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                // fourthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
+                // fifthImg.src = "https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/3cb974c28eb00627cc0671685c79ffd9.jpg";
                 mainVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                secondVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                thirdVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4'; 
-                fourthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                fifthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
-                fourthVid.innerHTML = "YouTube Video";
-                fifthVid.innerHTML = "YouTube Video";
+                // secondVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
+                // thirdVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4'; 
+                // fourthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
+                // fifthVid.href = 'https://www.youtube.com/watch?v=INscMGmhmX4';
+                // fourthVid.innerHTML = "YouTube Video";
+                // fifthVid.innerHTML = "YouTube Video";
                 IngreInstrContainer.setAttribute("class", "hidden");
+                additionalRecipes.setAttribute("class", "hidden")
                 mainIngredients.innerHTML = "";
-                secondIngredients.innerHTML = "";
-                thirdIngredients.innerHTML = "";
-                fourthIngredients.innerHTML = "";
-                fifthIngredients.innerHTML = "";
+                // secondIngredients.innerHTML = "";
+                // thirdIngredients.innerHTML = "";
+                // fourthIngredients.innerHTML = "";
+                // fifthIngredients.innerHTML = "";
                 mainInstructions.innerHTML = "";
-                secondInstructions.innerHTML = "";
-                thirdInstructions.innerHTML = "";
-                fourthInstructions.innerHTML = "";
-                fifthInstructions.innerHTML =  "";
+                // secondInstructions.innerHTML = "";
+                // thirdInstructions.innerHTML = "";
+                // fourthInstructions.innerHTML = "";
+                // fifthInstructions.innerHTML =  "";
             }
 
             if(data.meals !== null){
                 mealName = data.meals[0].strMeal
-                mealName1 = data.meals[1].strMeal
-                mealName2 = data.meals[2].strMeal
-
+                // mealName1 = data.meals[1].strMeal
+                // mealName2 = data.meals[2].strMeal
                 getMealInfo(mealName)
-                getMealInfo1(mealName1)
-                getMealInfo2(mealName2)
+
+                if(data.meals[1] !== undefined) {
+                    mealName1 = data.meals[1].strMeal
+                    additionalRecipes.removeAttribute("class", "hidden")
+                  getMealInfo1(mealName1)}
+                  else {
+                    additionalRecipes.setAttribute("class", "hidden")
+                  }
+
+                  if(data.meals[2] !== undefined) {
+                    mealName2 = data.meals[2].strMeal
+                  getMealInfo2(mealName2)}
+                  else {
+                    mealName2 = "No Recipes Found Please Try A Different Ingredient"
+                  }
+
+                
+                // getMealInfo1(mealName1)
+                // getMealInfo2(mealName2)
 
             if(data.meals[3] !== undefined) {
                 mealName3 = data.meals[3].strMeal
@@ -229,7 +301,11 @@ function getMealInfo (mealName) {
     .then(function(data){
         if (data.meals !== null){
             mainIngredients.innerHTML = "Ingredients: <br><br>"
-            mainInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            console.log(firstInstructions)
+            mainInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
+            // let apiInstruction = data.meals[0].strInstructions
+            console.log(data.meals[0].strInstructions.replace(/\r\n/g, "<br>"))
             dataArray = Object.entries(data.meals[0])
 
             for (each of dataArray.slice(9,29)) {
@@ -266,7 +342,8 @@ function getMealInfo1 (mealName) {
     .then(function(data){
         if (data.meals !== null){
             secondIngredients.innerHTML = "Ingredients: <br><br>"
-            secondInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            secondInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
 
             for (each of dataArray.slice(9,29)) {
@@ -303,7 +380,8 @@ function getMealInfo2 (mealName) {
         console.log(data)
         if (data.meals !== null){
             thirdIngredients.innerHTML = "Ingredients: <br><br>"
-            thirdInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            thirdInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
             
             for (each of dataArray.slice(9,29)) {
@@ -339,7 +417,8 @@ function getMealInfo3 (mealName) {
         console.log(data)
         if (data.meals !== null){
             fourthIngredients.innerHTML = "Ingredients: <br><br>"
-            fourthInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            fourthInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
  
             for (each of dataArray.slice(9,29)) {
@@ -377,7 +456,8 @@ function getMealInfo4 (mealName) {
         console.log(data)
         if (data.meals !== null){
             fifthIngredients.innerHTML = "Ingredients: <br><br>"
-            fifthInstructions.innerHTML = "Instructions: <br><br>" + data.meals[0].strInstructions 
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            fifthInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
 
             dataArray = Object.entries(data.meals[0])
 

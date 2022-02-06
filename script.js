@@ -312,7 +312,7 @@ function getMealInfo (mealName) {
     .then(function(data){
         if (data.meals !== null){
             mainIngredients.innerHTML = "Ingredients: <br><br>"
-            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br>")
             console.log(firstInstructions)
             mainInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             // let apiInstruction = data.meals[0].strInstructions
@@ -353,7 +353,7 @@ function getMealInfo1 (mealName) {
     .then(function(data){
         if (data.meals !== null){
             secondIngredients.innerHTML = "Ingredients: <br><br>"
-            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br>")
             secondInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
 
@@ -391,7 +391,7 @@ function getMealInfo2 (mealName) {
         console.log(data)
         if (data.meals !== null){
             thirdIngredients.innerHTML = "Ingredients: <br><br>"
-            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br>")
             thirdInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
             
@@ -428,7 +428,7 @@ function getMealInfo3 (mealName) {
         console.log(data)
         if (data.meals !== null){
             fourthIngredients.innerHTML = "Ingredients: <br><br>"
-            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br>")
             fourthInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
             dataArray = Object.entries(data.meals[0])
  
@@ -467,7 +467,7 @@ function getMealInfo4 (mealName) {
         console.log(data)
         if (data.meals !== null){
             fifthIngredients.innerHTML = "Ingredients: <br><br>"
-            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br><br>")
+            let firstInstructions = data.meals[0].strInstructions.replace(/\r\n/g, "<br>")
             fifthInstructions.innerHTML = "Instructions: <br><br>" + firstInstructions
 
             dataArray = Object.entries(data.meals[0])

@@ -22,7 +22,7 @@ h1 {
 /* Top Nav */
 
 .topnav {
-	margin-top: 30px;
+	margin-top: 50px;
 	text-align: center;
 	align-items: center;
 }
@@ -42,46 +42,58 @@ h2 {
 }
 
 .container {
-	min-height: 100vh;
-	width: 100%;
+	/* min-height: 100vh; */
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+
 /* Main container */
 .main-container {
 	box-sizing: border-box;
 	justify-content:space-around;
-	margin: 0;
-	padding: 20px;
+	/* margin: 0; */
+    /* margin-top: -58px; */
+    margin-bottom: 55px;
+	/* padding-bottom : 452px; */
     width: 100%;
-	height: auto;
-	background-color: gold;
-	text-align: center;
-	font-size: 30px;
-	font-weight: normal;
-	border-radius: 5px;
-}
-
-.block2 {
-	width: 50%;
 	height: 100%;
-    justify-content: space-between;
+	background-color: gold;
+	align-items: center;
+	text-align: center;
+	font-size: 25px;
+	font-weight: normal;
+	border-radius: 10px;
 }
 
-.recipe-box {
+.recipe-container {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 50px;
+	width: 100%;
+	height: auto;
+}
+
+
+#recipe-box {
     box-sizing: border-box;
-	margin-top: 0;
-    padding: 25px;
-    width: 60%;
-    height: auto;
+	/* margin-top: -73.5px; */
+    /* margin-bottom: -124.5px; */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
     text-align: justify;
 	align-items: center;
-    background-color: rgb(61, 60, 51);
-	font-size: 15px;
+	background-color: rgb(61, 60, 51);
+	font-size: 11px;
 	color: white;
-	border-radius: 5px;
+	border-radius: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 .a {
@@ -93,18 +105,23 @@ h2 {
 	margin: 0;
 	font-size: 18px;
 	font-weight: normal;
-	color:rgb(31, 30, 30);
+	/* color:rgb(31, 30, 30); */
+    /* padding-left: 150px; */
 }
 
 #main-img {
 	align-items: center;
-	margin: 30px;
-	padding: 0; 
-	width: 70%;
-	height: 50%;
-	font-size: 20px;
-	align-items: center;
-	border-radius: 5px;
+	margin-top: 20px;
+	/* padding: 0;  */
+	width: 90%;
+	height: auto;
+    /* height: 100%; */
+    /* width: 35vw; */
+    /* margin-right: -55px; */
+    /* padding-right: 60px;
+    border-radius: 15px; */
+	font-size: 30px;
+	border-radius: 10px 10px 10px 10px;
 }
 
 p {
@@ -116,6 +133,7 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
+    padding-top: 100px;
 	font-size: 4rem;
 	font-weight: 300;
 	color: black;
@@ -124,6 +142,7 @@ p {
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
+
 .section-title span {
 	color: gold;
 }
@@ -328,9 +347,12 @@ p {
 #hero .hero {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 50px;
-	justify-content: flex-start;
+    padding-top: 150px;
+    padding-bottom: 175px;
+	/* padding: 0 50px; */
+	/* justify-content: flex-start; */
 }
+
 #hero h1 {
 	display: block;
 	width: fit-content;
@@ -372,13 +394,95 @@ p {
 
 /* End Hero Section */
 
+#search-bar {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 5.5px;
+    background-color:  rgb(61, 60, 51);
+    color: white;
+    box-shadow: 5px 5px 10px;
+    padding-top: 5.5px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px black;
+}
+
+.button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 0.75px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px black;
+}
+
+#search-list {
+    padding-top: 20px;
+    margin-top: 45px;
+    /* background-color: #485563;
+    color: white;
+    align-items: center;
+    width: 75vw; */
+   
+    /* padding-bottom: 100px; */
+    /* margin-bottom: 100px; */
+}
+
+#search-history {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+#search-history button {
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 35px;
+    border-radius: 25px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 6px black;
+    font-size: 16px;
+
+}
+#clear-section {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+#reset-button {
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    /* margin-top: 35px; */
+    border-radius: 25px;
+    /* margin-left: 10px; */
+    box-shadow: 2px 2px 6px black;
+    font-size: 1.25rem;
+}
+
+/* #main-instr {
+    
+} */
+
 /* Services Section */
 #services .services {
+    /* padding-top: 200px; */
+    padding-bottom: 100px;
 	flex-direction: column;
 	text-align: center;
 	max-width: 1500px;
 	margin: 0 auto;
-	padding: 100px 0;
+	/* padding: 100px 0; */
+
 }
 #services .service-top {
 	max-width: 500px;
@@ -508,6 +612,10 @@ p {
 /* End Projects section */
 
 /* About Section */
+#team-img {
+    width: 70vw;
+    height: 100%;
+}
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
@@ -521,13 +629,17 @@ p {
 }
 #about .col-right {
 	width: 100%;
+    margin-left: 30px;
 }
 #about .col-right h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	margin-bottom: 10px;
+    padding-bottom: 20px;
+    text-align: start;
 }
+
 #about .col-right p {
 	margin-bottom: 20px;
 }
@@ -601,9 +713,13 @@ p {
 /*End contact Section */
 
 /* Footer */
-#footer {
+
+/* Got rid of #footer, it was causing discoloration on the left and right edges */
+
+/* #footer {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-}
+} */
+
 #footer .footer {
 	min-height: 200px;
 	flex-direction: column;

@@ -115,6 +115,11 @@ h2 {
 
 }
 
+.error-container {
+	max-width: 50%;
+	margin: 0 auto;
+}
+
 #main-img {
 	align-items: center;
 	margin-top: 20px;
@@ -175,28 +180,55 @@ p {
 
 /* 4-Column Recipe Container */
 .block2 {
-	background-color: gold;
+	
 	margin: 45px;
 	padding: 20px;
 	border-radius: 5px;
 	font-size: 15px;
 }
 
+.block3 {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	background-color: gold;
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+}
+
+.block4 {
+	padding: 10px;
+	background-color: rgb(78, 77, 65);
+	width: 100%;
+	color: white;
+	border-radius: 0 0 5px 5px;
+}
+
 #second-img {
-	border-radius: 50px;
+	padding-top: 10px;
+	width: 95%;
+	border-radius: 5px;
 }
 
 #third-img {
-	border-radius: 50px;
+	padding-top: 10px;
+	width: 95%;
+	border-radius: 5px;
 }
 
 #fourth-img {
-	border-radius: 50px;
+	padding-top: 10px;
+	width: 95%;
+	border-radius: 5px;
 }
 
 #fifth-img {
-	border-radius: 50px;
+	padding-top: 10px;
+	width: 95%;
+	border-radius: 5px;
 }
+
 
 /* Header section */
 #header {

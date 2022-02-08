@@ -545,7 +545,27 @@ function getMealInfo4(mealName) {
     });
 }
 
+// nav bar variables
+const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+
+// nav bar implementation
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	mobile_menu.classList.toggle('active');
+});
+
+// nav bar menu item event listeners
+menu_item.forEach((item) => {
+	item.addEventListener('click', () => {
+		hamburger.classList.toggle('active');
+		mobile_menu.classList.toggle('active');
+	});
+});
+
 // Clears the search history list upon reset button being clicked by the user.
 resetBtn.addEventListener("click", function () {
-  window.location.reload();
-});
+    window.location.reload();
+  });

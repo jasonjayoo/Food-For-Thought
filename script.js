@@ -40,8 +40,10 @@ var thirdIngredients = document.querySelector("#third-ingre");
 var fourthIngredients = document.querySelector("#fourth-ingre");
 var fifthIngredients = document.querySelector("#fifth-ingre");
 
+// var for main ingredient and instructions container - for readjustment for no data returns - hidden class
 var mainInfo = document.querySelector("#mainInfo");
 
+// var for main ingredient and instructions container - for readjustment for no data returns
 var mainContainer = document.querySelector("#main-container");
 
 // var for main ingredients and instructions containers - html recipe-box - to hide and show depending on available data
@@ -148,7 +150,7 @@ function getIngredientInfo() {
         mainContainer.classList.remove("error-container");
         // mainInfo.removeAttribute ("class", "hidden");
         mainInfo.classList.remove("hidden");
-        // mainInfo.style.display = "none";
+        // var for main ingredient and instructions container
 
         IngreInstrContainer.removeAttribute("class", "hidden");
         additionalRecipes.removeAttribute("class", "hidden");

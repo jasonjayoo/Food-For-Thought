@@ -77,11 +77,9 @@ h2 {
 	height: auto;
 }
 
-
+/* main recipe container style specs */
 #recipe-box {
     box-sizing: border-box;
-	/* margin-top: -73.5px; */
-    /* margin-bottom: -124.5px; */
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -90,9 +88,17 @@ h2 {
 	background-color: rgb(61, 60, 51);
 	font-size: 11px;
 	color: white;
-	border-radius: 10px;
+	border-radius: 13px;
+    font-weight: 500;
 }
 
+/* additional recipes font adjustments */
+#recipe-box2, #recipe-box3, #recipe-box4, #recipe-box5 {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* class hidden created for dynamic use in js */
 .hidden {
     display: none;
 }
@@ -106,23 +112,16 @@ h2 {
 	margin: 0;
 	font-size: 18px;
 	font-weight: normal;
-	/* color:rgb(31, 30, 30); */
-    /* padding-left: 150px; */
+
 }
 
 #main-img {
 	align-items: center;
 	margin-top: 20px;
-	/* padding: 0;  */
 	width: 90%;
 	height: auto;
-    /* height: 100%; */
-    /* width: 35vw; */
-    /* margin-right: -55px; */
-    /* padding-right: 60px;
-    border-radius: 15px; */
 	font-size: 30px;
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 50px;
 }
 
 p {
@@ -224,6 +223,7 @@ p {
 	width: 95%;
 	border-radius: 5px;
 }
+
 
 /* Header section */
 #header {
@@ -376,8 +376,6 @@ p {
 	margin: 0 auto;
     padding-top: 150px;
     padding-bottom: 175px;
-	/* padding: 0 50px; */
-	/* justify-content: flex-start; */
 }
 
 #hero h1 {
@@ -447,13 +445,6 @@ p {
 #search-list {
     padding-top: 20px;
     margin-top: 45px;
-    /* background-color: #485563;
-    color: white;
-    align-items: center;
-    width: 75vw; */
-   
-    /* padding-bottom: 100px; */
-    /* margin-bottom: 100px; */
 }
 
 #search-history {
@@ -489,32 +480,25 @@ p {
     padding-bottom: 5px;
     padding-left: 1em;
     padding-right: 1em;
-    /* margin-top: 35px; */
     border-radius: 25px;
-    /* margin-left: 10px; */
     box-shadow: 2px 2px 6px black;
     font-size: 1.25rem;
 }
 
-/* #main-instr {
-    
-} */
-
 /* Services Section */
 #services .services {
-    /* padding-top: 200px; */
     padding-bottom: 100px;
 	flex-direction: column;
 	text-align: center;
 	max-width: 1500px;
 	margin: 0 auto;
-	/* padding: 100px 0; */
-
 }
+
 #services .service-top {
 	max-width: 500px;
 	margin: 0 auto;
 }
+
 #services .service-bottom {
 	display: flex;
 	align-items: center;
@@ -522,6 +506,7 @@ p {
 	flex-wrap: wrap;
 	margin-top: 50px;
 }
+
 #services .service-item {
 	flex-basis: 80%;
 	display: flex;
@@ -537,6 +522,7 @@ p {
 	z-index: 1;
 	overflow: hidden;
 }
+
 #services .service-item::after {
 	content: '';
 	position: absolute;
@@ -548,17 +534,20 @@ p {
 	opacity: 0.9;
 	z-index: -1;
 }
+
 #services .service-bottom .icon {
 	height: 80px;
 	width: 80px;
 	margin-bottom: 20px;
 }
+
 #services .service-item h2 {
 	font-size: 2rem;
 	color: white;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
+
 #services .service-item p {
 	color: white;
 	text-align: left;
@@ -572,15 +561,18 @@ p {
 	margin: 0 auto;
 	padding: 100px 0;
 }
+
 #projects .projects-header h1 {
 	margin-bottom: 50px;
 }
+
 #projects .all-projects {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
+
 #projects .project-item {
 	display: flex;
 	align-items: center;
@@ -591,6 +583,7 @@ p {
 	overflow: hidden;
 	border-radius: 10px;
 }
+
 #projects .project-info {
 	padding: 30px;
 	flex-basis: 50%;
@@ -602,24 +595,29 @@ p {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 	color: white;
 }
+
 #projects .project-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
 }
+
 #projects .project-info h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
 }
+
 #projects .project-info p {
 	color: white;
 }
+
 #projects .project-img {
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
 }
+
 #projects .project-img:after {
 	content: '';
 	position: absolute;
@@ -630,9 +628,11 @@ p {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 	opacity: 0.7;
 }
+
 #projects .project-img img {
 	transition: 0.3s ease transform;
 }
+
 #projects .project-item:hover .project-img img {
 	transform: scale(1.1);
 }
@@ -643,6 +643,7 @@ p {
     width: 70vw;
     height: 100%;
 }
+
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
@@ -650,14 +651,17 @@ p {
 	margin: 0 auto;
 	padding: 100px 20px;
 }
+
 #about .col-left {
 	width: 250px;
 	height: 360px;
 }
+
 #about .col-right {
 	width: 100%;
     margin-left: 30px;
 }
+
 #about .col-right h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
@@ -670,18 +674,21 @@ p {
 #about .col-right p {
 	margin-bottom: 20px;
 }
+
 #about .col-right .cta {
 	color: black;
 	margin-bottom: 50px;
 	padding: 10px 20px;
 	font-size: 2rem;
 }
+
 #about .col-left .about-img {
 	height: 100%;
 	width: 100%;
 	position: relative;
 	border: 10px solid white;
 }
+
 #about .col-left .about-img::after {
 	content: '';
 	position: absolute;
@@ -689,7 +696,7 @@ p {
 	top: 19px;
 	height: 98%;
 	width: 98%;
-	border: 7px solid crimson;
+	border: 7px solid gold;
 	z-index: -1;
 }
 /* End About Section */
@@ -701,10 +708,12 @@ p {
 	margin: 0 auto;
 	width: 90%;
 }
+
 #contact .contact-items {
 	/* max-width: 400px; */
 	width: 100%;
 }
+
 #contact .contact-item {
 	width: 80%;
 	padding: 20px;
@@ -719,19 +728,23 @@ p {
 	box-shadow: 0px 0px 18px 0 #0000002c;
 	transition: 0.3s ease box-shadow;
 }
+
 #contact .contact-item:hover {
 	box-shadow: 0px 0px 5px 0 #0000002c;
 }
+
 #contact .icon {
 	width: 70px;
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
+
 #contact .contact-info h1 {
 	font-size: 2.5rem;
 	font-weight: 500;
 	margin-bottom: 5px;
 }
+
 #contact .contact-info h2 {
 	font-size: 1.3rem;
 	line-height: 2rem;
@@ -741,18 +754,13 @@ p {
 
 /* Footer */
 
-/* Got rid of #footer, it was causing discoloration on the left and right edges */
-
-/* #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-} */
-
 #footer .footer {
 	min-height: 200px;
 	flex-direction: column;
 	padding-top: 50px;
 	padding-bottom: 10px;
 }
+
 #footer h2 {
 	color: white;
 	font-weight: 500;
@@ -761,22 +769,27 @@ p {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 #footer .social-icon {
 	display: flex;
 	margin-bottom: 30px;
 }
+
 #footer .social-item {
 	height: 50px;
 	width: 50px;
 	margin: 0 5px;
 }
+
 #footer .social-item img {
 	filter: grayscale(1);
 	transition: 0.3s ease filter;
 }
+
 #footer .social-item:hover img {
 	filter: grayscale(0);
 }
+
 #footer p {
 	color: white;
 	font-size: 1.3rem;
@@ -794,6 +807,7 @@ p {
 		transform: scale(1.4);
 	}
 }
+
 @keyframes text_reveal_box {
 	50% {
 		width: 100%;
@@ -804,11 +818,13 @@ p {
 		left: 100%;
 	}
 }
+
 @keyframes text_reveal {
 	100% {
 		color: white;
 	}
 }
+
 @keyframes text_reveal_name {
 	100% {
 		color: gold;
@@ -817,7 +833,67 @@ p {
 }
 /* End Keyframes */
 
+
+* {
+	box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none; /* Prevent double borders */
+	cursor: pointer;
+  }
+  
+  form.example button:hover {
+	background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
 /* Media Query For Tablet */
+@media only screen and (max-width: 768px) {
+	#about .col-left .about-img {
+		width: 95%;
+		height: 85%;
+		border: 1px solid white;
+	}
+
+	#about .col-right h2 {
+		text-align: center;
+	}
+
+	#about .col-right p {
+		font-size: 1rem;
+	}
+    
+    #recipe-3, #recipe-4, #recipe-5 {
+        margin-top: 50px;
+    }
+}
+
+/* Adjustments at key screen size point for mobile device adjustment */
 @media only screen and (min-width: 768px) {
 	.cta {
 		font-size: 2.5rem;
@@ -920,7 +996,70 @@ p {
 	}
 	/* End contact  */
 }
-/* End Media Query For Tablet */
+
+
+
+
+/* Media Query For "About The Team" on smaller screen size*/
+@media only screen and (max-width: 987px) {
+	#about .col-right h1 {
+		font-size: 3rem;
+	}
+}
+
+/* Media Query For About Team "Front end developer"*/
+@media only screen and (max-width: 843px) {
+	#about .col-right p {
+		font-size: 1.2rem;
+	}
+}
+
+/* search bar length adjustment for smaller screen size */
+@media only screen and (max-width: 505px) {
+
+	#search-bar {
+		padding-left: 50px;
+		padding-right: 50px;
+}
+}
+
+/* search bar, "find an amazing recipe with just a single word", search button and clear button for mobile devices */
+@media only screen and (max-width: 407px) {
+
+	#search-bar {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	.subtitle.is-3 {
+		font-size: 1.5rem;
+	}
+
+	.button {
+		padding-left: .03em;
+		padding-right: .03em;
+	}
+	
+	#reset-button {
+		padding-left: 0.2px;
+		padding-right: 0.2px;
+	}
+
+}
+
+/* Adjustment for search bar and "find an amazing recipe with just a single word" for smaller screen size */
+@media only screen and (max-width: 305px) {
+
+	#search-bar {
+		padding-left: 25px;
+		padding-right: 25px;
+}
+
+	.subtitle.is-3 {
+		font-size: 1.2rem;
+}
+
+}
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
@@ -951,41 +1090,5 @@ p {
 		margin: 1.5%;
 	}
 }
-* {
-  box-sizing: border-box;
-}
 
-/* Style the search field */
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
-
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #0b7dda;
-}
-
-/* Clear floats */
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-/* End  Media Query For Desktop */
+/* End of Media Queries */

@@ -1052,6 +1052,15 @@ p {
 
 }
 
+/* made special spec for jason's phone - yay! */
+@media only screen and (max-width: 390px) {
+
+	.brand h1 span {
+		font-size: 28px;
+}
+
+}
+
 /* Adjustment for search bar and "find an amazing recipe with just a single word" for smaller screen size */
 @media only screen and (max-width: 305px) {
 

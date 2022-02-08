@@ -357,7 +357,7 @@ Jason Yoo
 ## Credits
 <br>
 
-To our amazing team I (Jason Yoo) thank you for all your hard work and dedication to this project. Jane & Kyle did an amazing job with the design and look of our application. Andrew thank you for helping us stay organzied and working every angle of this project. I am proud of how this application came out. I hope you all are too. It was a pleasure to work with all of you. 
+To our amazing team I (Jason Yoo) thank you for all your hard work and dedication to this project. Jane & Kyle did an amazing job with the design and look of our application. Andrew thank you for helping us stay organized and working every angle of this project. I am proud of how this application came out. I hope you all are too. It was a pleasure to work with all of you. 
 
 <br>
 

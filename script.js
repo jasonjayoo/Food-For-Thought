@@ -82,7 +82,7 @@ searchBtn.addEventListener("click", function (event) {
   if (recipeSearched === "") {
     getIngredientInfo();
   } else {
-    // if user inputs an ingredient spelled correctly or not it will push the searched ingredient into the local storage and call the functions to pull data from the api and render it to the page
+    // if user inputs an ingredient spelled correctly or not it will push the searched ingredient into the local storage and call the functions to pull data from the api and render it to the page. Also prevents duplicate search results from re-remndering
     if(savedRecipes.indexOf(mealSearch) == -1) {
 
         savedRecipes.push(mealSearch);

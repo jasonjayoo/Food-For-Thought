@@ -83,9 +83,13 @@ searchBtn.addEventListener("click", function (event) {
     getIngredientInfo();
   } else {
     // if user inputs an ingredient spelled correctly or not it will push the searched ingredient into the local storage and call the functions to pull data from the api and render it to the page
-    savedRecipes.push(mealSearch);
+    if(savedRecipes.indexOf(mealSearch) == -1) {
 
-    localStorage.setItem("searchHistory", JSON.stringify(savedRecipes));
+        savedRecipes.push(mealSearch);
+
+        localStorage.setItem("searchHistory", JSON.stringify(savedRecipes));
+    }
+
 
     getIngredientInfo();
     createSearchHistory();

@@ -359,6 +359,8 @@ Jason Yoo
 
 To our amazing team I (Jason Yoo) thank you for all your hard work and dedication to this project. Jane & Kyle did an amazing job with the design and look of our application. Andrew thank you for helping us stay organized and working every angle of this project. I am proud of how this application came out. I hope you all are too. It was a pleasure to work with all of you. 
 
+* Many thanks and credit goes to my fellow cohort member Mr. Tyler Welker. He was instrumental in the development and debugging of this project. He's contribution and help cannot be over stated. Thank you Tyler!
+
 <br>
 
 The following references, websites, and other resources were consulted and/or used in the development of this project:

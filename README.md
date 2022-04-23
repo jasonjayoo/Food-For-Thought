@@ -2,7 +2,7 @@
 
 <br>
 
-[Group Project One - Food For Thought: A Food Recipe Web Application]
+[Food For Thought: A Food Recipe Web Application]
 
 <br>
 

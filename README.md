@@ -55,9 +55,9 @@ SO THAT the user will find recipes that will allow him or her to use ingredients
 ## Installation
 <br>
 
-The application runs in a browser and can be viewed at: https://jasonjayoo.github.io/Our-Project-1/. 
+The application runs in a browser and can be viewed at: https://jasonjayoo.github.io/Food-For-Thought/. 
 
-The application's HTML, CSS, JS, images, and README files can be accessed from this repository: https://github.com/jasonjayoo/Our-Project-1.
+The application's HTML, CSS, JS, images, and README files can be accessed from this repository: https://github.com/jasonjayoo/Food-For-Thought.
 
 The application has the following interface:
 

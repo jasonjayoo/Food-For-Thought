@@ -70,10 +70,7 @@ var mealName4 = "";
 // var for retrieving stored search history in the local storage
 var savedRecipes = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
-// event listener for when user inputs an ingredient and clicks the search button - initiates all created functions
-searchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-
+function handleSearch() {
   // takes the users input but removes all blank spaces
   var mealSearch = searchBar.value.trim();
 
@@ -90,12 +87,23 @@ searchBtn.addEventListener("click", function (event) {
         localStorage.setItem("searchHistory", JSON.stringify(savedRecipes));
     }
 
-
     getIngredientInfo();
     createSearchHistory();
   }
   // upon clicking the search button the page will auto float down to the recipes section of the page - for user friendliness
   location.href = "#recipes";
+}
+
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  handleSearch();
+});
+
+searchBar.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    handleSearch();
+  }
 });
 
 // function to pull searched ingredients from the local storage and render it into buttons that will be displayed under a search history title.

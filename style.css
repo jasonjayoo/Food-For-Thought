@@ -115,6 +115,13 @@ h2 {
 
 }
 
+.main-buttons {
+	margin-top: 12px;
+	display: flex;
+	justify-content: space-between;
+	width: 418px;
+}
+
 .error-container {
 	max-width: 50%;
 	margin: 0 auto;
@@ -138,7 +145,7 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
-    padding-top: 100px;
+    padding-top: 75px;
 	font-size: 4rem;
 	font-weight: 300;
 	color: black;
@@ -380,7 +387,7 @@ p {
 	max-width: 1200px;
 	margin: 0 auto;
     padding-top: 150px;
-    padding-bottom: 175px;
+    padding-bottom: 32px;
 }
 
 #hero h1 {
@@ -425,13 +432,11 @@ p {
 /* End Hero Section */
 
 #search-bar {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 5.5px;
+    width: 424px;
+    padding: 8px 0;
     background-color:  rgb(61, 60, 51);
     color: white;
     box-shadow: 5px 5px 10px;
-    padding-top: 5.5px;
     text-align: center;
     border-radius: 25px;
     box-shadow: 2px 2px 8px black;
@@ -449,7 +454,7 @@ p {
 
 #search-list {
     padding-top: 20px;
-    margin-top: 45px;
+    margin-top: 22px;
 }
 
 #search-history {
@@ -461,11 +466,8 @@ p {
 #search-history button {
     margin: 0 auto;
     align-items: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
-    margin-top: 35px;
+	padding: 0 1rem 5px 1rem;
+    margin-top: 22px;
     border-radius: 25px;
     margin-left: 10px;
     box-shadow: 2px 2px 6px black;
@@ -479,12 +481,9 @@ p {
 }
 
 #reset-button {
-    margin: 0 auto;
     align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
     border-radius: 25px;
     box-shadow: 2px 2px 6px black;
     font-size: 1.25rem;
@@ -492,7 +491,7 @@ p {
 
 /* Services Section */
 #services .services {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 	flex-direction: column;
 	text-align: center;
 	max-width: 1500px;
@@ -652,9 +651,8 @@ p {
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
-	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 20px;
+	padding: 20px;
 }
 
 #about .col-left {
@@ -720,7 +718,7 @@ p {
 }
 
 #contact .contact-item {
-	width: 80%;
+	/* width: 80%; */
 	padding: 20px;
 	text-align: center;
 	border-radius: 10px;
@@ -742,6 +740,7 @@ p {
 	width: 70px;
 	margin: 0 auto;
 	margin-bottom: 10px;
+	padding-top: 24px;
 }
 
 #contact .contact-info h1 {
@@ -764,6 +763,7 @@ p {
 	flex-direction: column;
 	padding-top: 50px;
 	padding-bottom: 10px;
+	margin-top: 20px;
 }
 
 #footer h2 {
@@ -885,6 +885,10 @@ p {
 		border: 1px solid white;
 	}
 
+	#about .col-right {
+		margin-left: 0;
+	}
+
 	#about .col-right h2 {
 		text-align: center;
 	}
@@ -892,6 +896,11 @@ p {
 	#about .col-right p {
 		font-size: 1rem;
 	}
+
+	#contact .contact-info h1 {
+		padding-top: 14px;
+	}
+	
     
     #recipe-3, #recipe-4, #recipe-5 {
         margin-top: 50px;
@@ -970,7 +979,6 @@ p {
 	/* contact  */
 	#contact .contact {
 		flex-direction: column;
-		padding: 100px 0;
 		align-items: center;
 		justify-content: center;
 		min-width: 20vh;
@@ -1023,18 +1031,21 @@ p {
 @media only screen and (max-width: 505px) {
 
 	#search-bar {
-		padding-left: 50px;
-		padding-right: 50px;
-}
+		width: 324px;
+	}
+	.main-buttons {
+		width: 322px;
+	}
+
 }
 
 /* search bar, "find an amazing recipe with just a single word", search button and clear button for mobile devices */
 @media only screen and (max-width: 407px) {
 
-	#search-bar {
+	/* #search-bar {
 		padding-left: 35px;
 		padding-right: 35px;
-	}
+	} */
 
 	.subtitle.is-3 {
 		font-size: 1.5rem;
@@ -1067,10 +1078,10 @@ p {
 /* Adjustment for search bar and "find an amazing recipe with just a single word" for smaller screen size */
 @media only screen and (max-width: 305px) {
 
-	#search-bar {
+	/* #search-bar {
 		padding-left: 25px;
 		padding-right: 25px;
-}
+} */
 
 	.subtitle.is-3 {
 		font-size: 1.2rem;
